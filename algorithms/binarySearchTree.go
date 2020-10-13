@@ -2,7 +2,7 @@ package algorithms
 
 var (
 	keys  []int
-	count int = 0
+	count int = 1
 )
 
 // Node represents a leaf component in the binary tree
@@ -61,4 +61,39 @@ func (node Node) InOrderTraversal() []int {
 	}
 
 	return keys
+}
+
+// PreOrderTraversal returns keys in a preorder sequence
+func (node Node) PreOrderTraversal() []int {
+	keys = append(keys, node.Key)
+
+	if node.LeftChild != nil {
+		node.LeftChild.PreOrderTraversal()
+	}
+
+	if node.RightChild != nil {
+		node.RightChild.PreOrderTraversal()
+	}
+
+	return keys
+}
+
+// PostOrderTraversal returns keys in a postorder sequence
+func (node Node) PostOrderTraversal() []int {
+	if node.LeftChild != nil {
+		node.LeftChild.PostOrderTraversal()
+	}
+
+	if node.RightChild != nil {
+		node.RightChild.PostOrderTraversal()
+	}
+
+	keys = append(keys, node.Key)
+
+	return keys
+}
+
+// ClearSlice clears slice
+func ClearSlice() {
+	keys = keys[:0]
 }

@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	//algorithms.RunBst()
+	algorithms.RunBst()
 	algorithms.RunHashTable()
 }

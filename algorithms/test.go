@@ -17,7 +17,16 @@ func RunBst() {
 	fmt.Println("search for 309 in tree: ", status)
 
 	ioTraversal := binaryTree.InOrderTraversal()
+	ClearSlice()
 	fmt.Println("InOrder Traversal: ", ioTraversal)
+
+	proTraversal := binaryTree.PreOrderTraversal()
+	ClearSlice()
+	fmt.Println("PreOrder Traversal: ", proTraversal)
+
+	psoTraversal := binaryTree.PostOrderTraversal()
+	ClearSlice()
+	fmt.Println("PostOrder Traversal: ", psoTraversal)
 }
 
 // RunHashTable executes the hash table algorithm
